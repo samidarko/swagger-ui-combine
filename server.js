@@ -16,6 +16,6 @@ const config = {
 }
 
 const app = express()
-app.use(express.static('dist'))
+app.use('/docs', express.static('dist'))
 app.get('/openapi.json', swaggerCombine.middleware(config))
 app.listen(PORT)
